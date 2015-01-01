@@ -11,7 +11,7 @@ VspdCToMySQL::~VspdCToMySQL()
 	CloseMySQLConn();
 }
  
-//³õÊ¼»¯Êı¾İ
+//åˆå§‹åŒ–æ•°æ®
 int VspdCToMySQL::ConnMySQL(char *host,char * port ,char * Db,
 							char * user,char* passwd,char * charset,char * Msg)
 {
@@ -40,7 +40,7 @@ int VspdCToMySQL::ConnMySQL(char *host,char * port ,char * Db,
        return 0;
 }
  
-//²éÑ¯Êı¾İ
+//æŸ¥è¯¢æ•°æ®
 std::vector<tableAgent> VspdCToMySQL::SelectData(const std::string &SQL, std::string &Msg)
 {
     MYSQL_ROW m_row;
@@ -85,7 +85,7 @@ std::vector<tableAgent> VspdCToMySQL::SelectData(const std::string &SQL, std::st
     return result;
 }
  
-//²åÈëÊı¾İ
+//æ’å…¥æ•°æ®
 int VspdCToMySQL::InsertData(const std::string &SQL,std::string &Msg)
 {
        if(mysql_query(&mysql,SQL.c_str()) != 0)
@@ -98,7 +98,7 @@ int VspdCToMySQL::InsertData(const std::string &SQL,std::string &Msg)
        return 0;
 }
  
-//¸üĞÂÊı¾İ
+//æ›´æ–°æ•°æ®
 int VspdCToMySQL::UpdateData(const std::string &SQL, std::string &Msg)
 {
 	if(mysql_query(&mysql,SQL.c_str()) != 0)
@@ -110,7 +110,7 @@ int VspdCToMySQL::UpdateData(const std::string &SQL, std::string &Msg)
     return 0;
 }
  
-//É¾³ıÊı¾İ
+//åˆ é™¤æ•°æ®
 int VspdCToMySQL::DeleteData(const std::string &SQL, std::string &Msg)
 {
        if(mysql_query(&mysql,SQL.c_str()) != 0)
@@ -123,7 +123,7 @@ int VspdCToMySQL::DeleteData(const std::string &SQL, std::string &Msg)
        return 0;
 }
  
-//¹Ø±ÕÊı¾İ¿âÁ¬½Ó
+//å…³é—­æ•°æ®åº“è¿æ¥
 void VspdCToMySQL::CloseMySQLConn()
 {
        mysql_close(&mysql);

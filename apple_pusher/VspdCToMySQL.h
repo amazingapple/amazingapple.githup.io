@@ -11,92 +11,92 @@ class VspdCToMySQL
 {
 public: 
        /*
-       ¹¹Ôìº¯ÊýºÍÏ¡¹¹º¯Êý
+       æž„é€ å‡½æ•°å’Œç¨€æž„å‡½æ•°
        */
        VspdCToMySQL();
        virtual ~VspdCToMySQL();
  
        /*
-       Ö÷ÒªµÄ¹¦ÄÜ£º
-       ³õÊ¼»¯Êý¾Ý¿â
-       Á¬½ÓÊý¾Ý¿â
-       ÉèÖÃ×Ö·û¼¯
+       ä¸»è¦çš„åŠŸèƒ½ï¼š
+       åˆå§‹åŒ–æ•°æ®åº“
+       è¿žæŽ¥æ•°æ®åº“
+       è®¾ç½®å­—ç¬¦é›†
  
-       Èë¿Ú²ÎÊý£º
-       host £ºMYSQL·þÎñÆ÷IP
-       port:Êý¾Ý¿â¶Ë¿Ú
-       Db£ºÊý¾Ý¿âÃû³Æ
-       user£ºÊý¾Ý¿âÓÃ»§
-       passwd£ºÊý¾Ý¿âÓÃ»§µÄÃÜÂë
-       charset£ºÏ£ÍûÊ¹ÓÃµÄ×Ö·û¼¯
-       Msg:·µ»ØµÄÏûÏ¢£¬°üÀ¨´íÎóÏûÏ¢
+       å…¥å£å‚æ•°ï¼š
+       host ï¼šMYSQLæœåŠ¡å™¨IP
+       port:æ•°æ®åº“ç«¯å£
+       Dbï¼šæ•°æ®åº“åç§°
+       userï¼šæ•°æ®åº“ç”¨æˆ·
+       passwdï¼šæ•°æ®åº“ç”¨æˆ·çš„å¯†ç 
+       charsetï¼šå¸Œæœ›ä½¿ç”¨çš„å­—ç¬¦é›†
+       Msg:è¿”å›žçš„æ¶ˆæ¯ï¼ŒåŒ…æ‹¬é”™è¯¯æ¶ˆæ¯
  
-       ³ö¿Ú²ÎÊý£º
-       int £º0±íÊ¾³É¹¦£»1±íÊ¾Ê§°Ü
+       å‡ºå£å‚æ•°ï¼š
+       int ï¼š0è¡¨ç¤ºæˆåŠŸï¼›1è¡¨ç¤ºå¤±è´¥
        */
        int ConnMySQL(char *host,char * port,char * Db,
 		   char * user,char* passwd,char * charset,char * Msg);
  
        /*
-       Ö÷ÒªµÄ¹¦ÄÜ£º
-       ²éÑ¯Êý¾Ý
+       ä¸»è¦çš„åŠŸèƒ½ï¼š
+       æŸ¥è¯¢æ•°æ®
  
-       Èë¿Ú²ÎÊý£º
-       SQL£º²éÑ¯µÄSQLÓï¾ä
-       Cnum:²éÑ¯µÄÁÐÊý
-       Msg:·µ»ØµÄÏûÏ¢£¬°üÀ¨´íÎóÏûÏ¢
+       å…¥å£å‚æ•°ï¼š
+       SQLï¼šæŸ¥è¯¢çš„SQLè¯­å¥
+       Cnum:æŸ¥è¯¢çš„åˆ—æ•°
+       Msg:è¿”å›žçš„æ¶ˆæ¯ï¼ŒåŒ…æ‹¬é”™è¯¯æ¶ˆæ¯
  
-       ³ö¿Ú²ÎÊý£º
-       string ×¼±¸·ÅÖÃ·µ»ØµÄÊý¾Ý£¬¶àÌõ¼ÇÂ¼ÔòÓÃ0x06¸ô¿ª,¶à¸öÀ¸Î»ÓÃ0x05¸ô¿ª
-       Èç¹û ·µ»ØµÄ³¤¶È£½ 0£¬Ôð±íÊ¾Îè½á¹û
+       å‡ºå£å‚æ•°ï¼š
+       string å‡†å¤‡æ”¾ç½®è¿”å›žçš„æ•°æ®ï¼Œå¤šæ¡è®°å½•åˆ™ç”¨0x06éš”å¼€,å¤šä¸ªæ ä½ç”¨0x05éš”å¼€
+       å¦‚æžœ è¿”å›žçš„é•¿åº¦ï¼ 0ï¼Œè´£è¡¨ç¤ºèˆžç»“æžœ
        */
 	   std::vector<tableAgent> SelectData(const std::string &SQL, std::string &Msg);
       
        /*
-       Ö÷Òª¹¦ÄÜ£º
-       ²åÈëÊý¾Ý
+       ä¸»è¦åŠŸèƒ½ï¼š
+       æ’å…¥æ•°æ®
       
-       Èë¿Ú²ÎÊý
-       SQL£º²éÑ¯µÄSQLÓï¾ä
-       Msg:·µ»ØµÄÏûÏ¢£¬°üÀ¨´íÎóÏûÏ¢
+       å…¥å£å‚æ•°
+       SQLï¼šæŸ¥è¯¢çš„SQLè¯­å¥
+       Msg:è¿”å›žçš„æ¶ˆæ¯ï¼ŒåŒ…æ‹¬é”™è¯¯æ¶ˆæ¯
  
-       ³ö¿Ú²ÎÊý£º
-       int £º0±íÊ¾³É¹¦£»1±íÊ¾Ê§°Ü
+       å‡ºå£å‚æ•°ï¼š
+       int ï¼š0è¡¨ç¤ºæˆåŠŸï¼›1è¡¨ç¤ºå¤±è´¥
        */
 	   int InsertData(const std::string &SQL,std::string &Msg);
  
        /*
-       Ö÷Òª¹¦ÄÜ£º
-       ÐÞ¸ÄÊý¾Ý
+       ä¸»è¦åŠŸèƒ½ï¼š
+       ä¿®æ”¹æ•°æ®
       
-       Èë¿Ú²ÎÊý
-       SQL£º²éÑ¯µÄSQLÓï¾ä
-       Msg:·µ»ØµÄÏûÏ¢£¬°üÀ¨´íÎóÏûÏ¢
+       å…¥å£å‚æ•°
+       SQLï¼šæŸ¥è¯¢çš„SQLè¯­å¥
+       Msg:è¿”å›žçš„æ¶ˆæ¯ï¼ŒåŒ…æ‹¬é”™è¯¯æ¶ˆæ¯
  
-       ³ö¿Ú²ÎÊý£º
-       int £º0±íÊ¾³É¹¦£»1±íÊ¾Ê§°Ü
+       å‡ºå£å‚æ•°ï¼š
+       int ï¼š0è¡¨ç¤ºæˆåŠŸï¼›1è¡¨ç¤ºå¤±è´¥
        */
        int UpdateData(const std::string &SQL, std::string &Msg);
  
  
        /*
-       Ö÷Òª¹¦ÄÜ£º
-       É¾³ýÊý¾Ý
+       ä¸»è¦åŠŸèƒ½ï¼š
+       åˆ é™¤æ•°æ®
       
-       Èë¿Ú²ÎÊý
-       SQL£º²éÑ¯µÄSQLÓï¾ä
-       Msg:·µ»ØµÄÏûÏ¢£¬°üÀ¨´íÎóÏûÏ¢
+       å…¥å£å‚æ•°
+       SQLï¼šæŸ¥è¯¢çš„SQLè¯­å¥
+       Msg:è¿”å›žçš„æ¶ˆæ¯ï¼ŒåŒ…æ‹¬é”™è¯¯æ¶ˆæ¯
  
-       ³ö¿Ú²ÎÊý£º
-       int £º0±íÊ¾³É¹¦£»1±íÊ¾Ê§°Ü
+       å‡ºå£å‚æ•°ï¼š
+       int ï¼š0è¡¨ç¤ºæˆåŠŸï¼›1è¡¨ç¤ºå¤±è´¥
        */
        int DeleteData(const std::string &SQL, std::string &Msg);
 private:
-       //±äÁ¿
+       //å˜é‡
        MYSQL mysql;
        /*
-       Ö÷Òª¹¦ÄÜ£º
-       ¹Ø±ÕÊý¾Ý¿âÁ¬½Ó
+       ä¸»è¦åŠŸèƒ½ï¼š
+       å…³é—­æ•°æ®åº“è¿žæŽ¥
        */
        void CloseMySQLConn();
  
